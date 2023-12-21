@@ -70,39 +70,6 @@ const productsController = async (req, res) => {
 
 
 
-// const productsController = async (req, res) => {
-//   try {
-//     const { name, price, categoryId, quantity } = req.body;
-
-//     if (!name || !price || !categoryId) {
-//       return handleStatusCode(res, 400, 'Name, price, and categoryId are required fields');
-//     }
-
-//     const existingCategory = await Categorys.findByPk(categoryId);
-
-//     if (!existingCategory) {
-//       return handleStatusCode(res, 404, 'Category not found');
-//     }
-
-
-//     const newProduct = await Products.create({
-//       name,
-//       price,
-//       categoryId,
-//     });
-
-
-//     const newInventory = await Inventorys.create({
-//       quantity,
-//       productId: newProduct.id,
-//     });
-
-//     res.status(201).json({ message: 'Product created successfully', product: newProduct });
-//   } catch (error) {
-//     console.error(error);
-//     handleStatusCode(res, 500, 'Internal Server Error');
-//   }
-// };
 
 
 const inventoryController = async (req, res) => {
@@ -209,30 +176,6 @@ const assignRoleByEmailController = async (req, res) => {
     handleStatusCode(res, 500, 'Internal Server Error');
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
